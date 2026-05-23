@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Amira NPL — Chi siamo</title>
+<meta name="description" content="Amira NPL — operazioni immobiliari, saldo e stralcio, aste e crediti deteriorati. Studio Sarpi, Milano." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fbfaf6;
+    --paper:#ffffff;
+    --ink:#111111;
+    --ink-soft:#2a2a2a;
+    --muted:#5b5b5b;
+    --hair:#e6e3da;
+    --cream:#f3eedd;
+    --cream-strong:#ecd98a;
+    --accent:#f59016;
+    --accent-dark:#d97706;
+    --navy:#0b1220;
+    --navy-2:#101a2c;
+    --whatsapp:#25D366;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .container{
+    max-width:980px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ================ Header ================ */
+  header.site{
+    border-bottom:1px solid var(--hair);
+    background:var(--bg);
+    position:sticky;
+    top:0;
+    z-index:50;
+    backdrop-filter:saturate(140%) blur(6px);
+    background:rgba(251,250,246,.85);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:64px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:var(--ink);
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:22px;
+    font-weight:600;
+    letter-spacing:.2px;
+  }
+  .brand .dot{
+    width:10px;height:10px;border-radius:50%;
+    background:var(--accent);
+    display:inline-block;
+  }
+  .nav-actions a{
+    color:var(--ink);
+    text-decoration:none;
+    font-size:14px;
+    font-weight:500;
+    margin-left:18px;
+    opacity:.85;
+  }
+  .nav-actions a:hover{opacity:1}
+
+  /* ================ Hero ================ */
+  section.hero{
+    padding:72px 0 40px;
+    border-bottom:1px solid var(--hair);
+  }
+  .kicker{
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:11px;
+    font-weight:600;
+    color:var(--muted);
+    margin-bottom:14px;
+  }
+  h1{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:54px;
+    line-height:1.08;
+    font-weight:500;
+    margin:0 0 28px;
+    color:var(--ink);
+    letter-spacing:-.5px;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.4fr .9fr;
+    gap:50px;
+    align-items:start;
+  }
+  .lead{
+    color:var(--ink-soft);
+    font-size:17px;
+    line-height:1.7;
+  }
+  .lead p{margin:0 0 14px}
+  .hero-mark{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+  }
+  .hero-mark .circle{
+    width:170px;height:170px;border-radius:50%;
+    background:radial-gradient(120% 120% at 30% 25%, #1b2536 0%, #0a1322 70%);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 24px 60px -28px rgba(11,18,32,.55), inset 0 0 0 1px rgba(255,255,255,.04);
+  }
+
+  /* ================ Sections ================ */
+  section.block{
+    padding:64px 0;
+    border-bottom:1px solid var(--hair);
+  }
+  section.block:last-of-type{border-bottom:none}
+  .h2{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:34px;
+    line-height:1.15;
+    font-weight:600;
+    margin:0 0 24px;
+    letter-spacing:-.3px;
+  }
+  .h3{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:24px;
+    line-height:1.2;
+    font-weight:600;
+    margin:0 0 12px;
+  }
+  .two-col{
+    display:grid;
+    grid-template-columns:1.4fr .9fr;
+    gap:40px;
+    align-items:start;
+  }
+  .prose p{margin:0 0 14px;color:var(--ink-soft);font-size:16px;line-height:1.75}
+  .prose strong{font-weight:700;color:var(--ink)}
+
+  /* Side cards */
+  .card{
+    background:var(--paper);
+    border:1px solid var(--hair);
+    border-radius:14px;
+    padding:22px 22px;
+    box-shadow:0 1px 0 rgba(0,0,0,.02);
+  }
+  .card .label{
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:10px;
+    color:var(--muted);
+    font-weight:700;
+    margin-bottom:10px;
+  }
+  .card h4{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:22px;
+    margin:0 0 14px;
+    font-weight:600;
+  }
+  .kv{display:flex;justify-content:space-between;gap:12px;padding:6px 0;font-size:14px}
+  .kv .k{color:var(--muted)}
+  .kv .v{font-weight:600}
+  .strike{text-decoration:line-through;color:#9a9a9a;font-weight:500}
+  .card .note{margin-top:14px;font-size:13px;color:var(--muted);line-height:1.55}
+
+  .card.cream{background:var(--cream);border-color:#e7dcb1}
+  .card.cream h4 small{display:block;font-size:12px;font-family:'Inter';font-weight:600;color:#7a5d10;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+  .card.cream .marker{
+    display:inline-block;width:18px;height:18px;border-radius:50%;
+    background:var(--cream-strong);
+    margin-right:8px;vertical-align:-3px;
+  }
+
+  /* ================ Banner ================ */
+  .banner{
+    background:#0a0a0a;
+    color:#f5f1e3;
+    border-radius:18px;
+    padding:36px 36px;
+    margin:30px 0 10px;
+  }
+  .banner .small{
+    text-transform:uppercase;letter-spacing:.18em;font-size:11px;font-weight:700;color:#c9c2a8;margin-bottom:8px;
+  }
+  .banner p{margin:0 0 18px;color:#e8e2cd;font-size:16px;line-height:1.7;max-width:760px}
+  .banner .quote{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:26px;line-height:1.25;color:#f3e9c6;
+    margin-top:6px;
+  }
+
+  /* ================ Team ================ */
+  .team{
+    display:grid;grid-template-columns:240px 1fr;gap:36px;align-items:start;
+  }
+  .team.reverse{grid-template-columns:1fr 240px}
+  .avatar-wrap{display:flex;flex-direction:column;align-items:center;gap:12px}
+  .avatar{
+    width:220px;height:220px;border-radius:50%;
+    background:#0b1220;
+    position:relative;overflow:hidden;
+    box-shadow:0 16px 40px -20px rgba(11,18,32,.5);
+  }
+  .avatar svg{display:block;width:100%;height:100%}
+  .role-pill{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#fff;border:1px solid var(--hair);
+    border-radius:999px;
+    padding:8px 14px;
+    font-size:12px;font-weight:600;color:var(--ink);
+    max-width:220px;
+    text-align:center;
+    line-height:1.3;
+  }
+  .role-pill .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+  .team-bio p{margin:0 0 12px;font-size:16px;line-height:1.75;color:var(--ink-soft)}
+  .team-bio .h3{margin-top:0}
+  .team-bio em{font-style:italic;color:#3a3a3a}
+
+  /* ================ CTA ================ */
+  section.cta{
+    background:#000;
+    color:#f5f1e3;
+    padding:60px 0;
+    margin-top:0;
+  }
+  .cta-grid{
+    display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;
+  }
+  .cta .kicker{color:#c9c2a8}
+  .cta h2{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:42px;line-height:1.1;font-weight:500;margin:0 0 14px;color:#fff;
+  }
+  .cta p{color:#d8d2bb;font-size:16px;margin:0}
+  .cta-buttons{display:flex;gap:14px;justify-content:flex-end;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:14px 22px;border-radius:999px;
+    font-size:14px;font-weight:600;text-decoration:none;
+    border:1px solid transparent;
+    transition:transform .15s ease, opacity .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px)}
+  .btn-wa{background:var(--whatsapp);color:#0a3d1e}
+  .btn-mail{background:#fff;color:#0a0a0a}
+  .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+
+  /* ================ Footer ================ */
+  footer.site{
+    background:var(--bg);
+    border-top:1px solid var(--hair);
+    padding:42px 0 30px;
+  }
+  .foot{
+    display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:32px;
+  }
+  .foot h5{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:18px;margin:0 0 10px;font-weight:600;
+  }
+  .foot p, .foot a{color:var(--muted);font-size:14px;line-height:1.7;text-decoration:none}
+  .foot a:hover{color:var(--ink)}
+  .copyright{
+    margin-top:30px;
+    padding-top:18px;
+    border-top:1px solid var(--hair);
+    font-size:12px;color:var(--muted);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  }
+
+  /* ================ Responsive ================ */
+  @media (max-width: 820px){
+    h1{font-size:38px}
+    .h2{font-size:28px}
+    .hero-grid,.two-col,.team,.team.reverse,.cta-grid,.foot{grid-template-columns:1fr;gap:24px}
+    .hero-mark{justify-content:flex-start}
+    .cta-buttons{justify-content:flex-start}
+    section.hero{padding:48px 0 28px}
+    section.block{padding:44px 0}
+    .banner{padding:24px}
+    .avatar{width:180px;height:180px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site">
+  <div class="container nav">
+    <a class="brand" href="#top">
+      <span class="dot"></span>
+      Amira NPL
+    </a>
+    <div class="nav-actions">
+      <a href="#contatti">Contatti</a>
+      <a href="https://wa.me/393401940666" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container">
+    <div class="kicker">Chi siamo</div>
+    <div class="hero-grid">
+      <div>
+        <h1>Operazioni immobiliari, saldo e stralcio, aste e crediti deteriorati.</h1>
+        <div class="lead">
+          <p>Amira NPL nasce con una visione molto precisa: individuare opportunità immobiliari fuori dai canali tradizionali, dove il valore non si crea semplicemente comprando "a sconto", ma sapendo leggere correttamente una situazione debitoria, giuridica, immobiliare e commerciale.</p>
+        </div>
+      </div>
+      <div class="hero-mark" aria-hidden="true">
+        <div class="circle">
+          <!-- Stylized house+circuit mark (Amira NPL inspired) -->
+          <svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="#f59016" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 70 L60 35 L100 70" stroke="#ffffff"/>
+              <path d="M30 68 L30 95 L90 95 L90 68" stroke="#ffffff"/>
+              <rect x="54" y="74" width="12" height="21" fill="#f59016" stroke="#f59016"/>
+              <circle cx="22" cy="40" r="3" fill="#f59016"/>
+              <circle cx="34" cy="28" r="3" fill="#f59016"/>
+              <circle cx="48" cy="22" r="3" fill="#f59016"/>
+              <path d="M22 40 L34 28 L48 22"/>
+              <path d="M30 68 L22 40"/>
+              <path d="M48 22 L60 35"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MERCATO ORDINARIO ============ -->
+<section class="block">
+  <div class="container">
+    <div class="two-col">
+      <div class="prose">
+        <h2 class="h2">Dove il mercato ordinario spesso non riesce ad arrivare.</h2>
+        <p>L'attività di Amira NPL si concentra principalmente su <strong>NPL immobiliari</strong>, operazioni di <strong>saldo e stralcio</strong>, <strong>aste giudiziarie</strong> e situazioni immobiliari complesse nelle quali esiste un credito deteriorato, una procedura esecutiva, una difficoltà finanziaria del debitore oppure un immobile che può essere valorizzato attraverso una trattativa professionale.</p>
+        <p>In parole semplici, Amira NPL lavora dove il mercato ordinario spesso non riesce ad arrivare: immobili gravati da debiti, procedure esecutive, posizioni bancarie deteriorate, trattative con creditori, accordi pre-asta, acquisti a saldo e stralcio e operazioni immobiliari che richiedono competenza, esperienza e capacità di analisi.</p>
+      </div>
+      <aside class="card">
+        <div class="label">Esempio concreto</div>
+        <h4>Saldo e stralcio</h4>
+        <div class="kv"><span class="k">Valore di mercato</span><span class="v">190.000 €</span></div>
+        <div class="kv"><span class="k">Debito complessivo</span><span class="v">250.000 €</span></div>
+        <div class="kv"><span class="k">Acquisto a S&amp;S</span><span class="v"><span class="strike">170.000</span> 120.000 €</span></div>
+        <p class="note">Spazio reale tra debito nominale, valore della casa sul mercato e valore di realizzo che il creditore accetta. Bisogna leggere la pratica, dialogare con creditori e debitore, analizzare lo stato occupativo, i tempi di liberazione.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NPL IMMOBILIARI ============ -->
+<section class="block">
+  <div class="container">
+    <div class="two-col">
+      <div class="prose">
+        <h2 class="h2">Che cosa sono gli NPL immobiliari</h2>
+        <p>Gli NPL, cioè <strong>Non Performing Loans</strong>, sono <strong>crediti deteriorati</strong>: somme di denaro che banche, società finanziarie o altri creditori vantano nei confronti di soggetti che non riescono più a pagare regolarmente.</p>
+        <p>Quando questi crediti sono collegati a immobili, si apre un mondo di opportunità molto interessante per investitori preparati. L'immobile può essere già in asta, può essere prossimo alla vendita giudiziaria, oppure può trovarsi in una fase precedente, nella quale è ancora possibile intervenire con una trattativa di saldo e stralcio.</p>
+        <p>Amira NPL non si limita a cercare immobili in vendita: analizza il contesto complessivo dell'operazione. Valuta il credito, il debito, il valore reale dell'immobile, i costi, i rischi, i tempi, la possibilità di accordo con il creditore e il potenziale margine per l'investitore.</p>
+      </div>
+      <aside class="card cream">
+        <h4><small>Strategia</small>Aste: non solo prezzo basso, ma strategia</h4>
+        <p class="note" style="color:#5b4a18">L'asta non è un evento da subire, ma da governare. Bisogna leggere la perizia, l'avviso di vendita, analizzare lo stato occupativo, valutare il margine reale e l'aggiudicazione e i tempi di liberazione.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SALDO E STRALCIO ============ -->
+<section class="block">
+  <div class="container">
+    <div class="two-col">
+      <div class="prose">
+        <h2 class="h2">Il saldo e stralcio: una trattativa che crea valore</h2>
+        <p>Il <strong>saldo e stralcio</strong> è una trattativa con cui il debitore, spesso con il supporto di un operatore esperto, chiude la propria esposizione debitoria pagando una somma inferiore rispetto al debito complessivo.</p>
+        <p>Per il creditore può essere conveniente perché recupera denaro in tempi più rapidi, evitando lungaggini giudiziarie e ulteriori costi. Per il debitore può rappresentare una via d'uscita da una situazione pesante. Per l'investitore, invece, può diventare un'opportunità immobiliare estremamente interessante.</p>
+        <p>Amira NPL lavora proprio su questo equilibrio: trovare un punto di incontro tra creditore, debitore e investitore, trasformando una situazione critica in un'operazione sostenibile e profittevole.</p>
+      </div>
+      <aside class="card">
+        <div class="label">Punto di vista</div>
+        <h4>Il valore nasce dal metodo</h4>
+        <p class="note">Numeri, perizia, esposizione del debitore, tempi del procedimento e stato occupativo formano il quadro complessivo. Solo leggendolo per intero si può intervenire con valore.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ESEMPIO DISTRESSED ============ -->
+<section class="block">
+  <div class="container">
+    <div class="two-col">
+      <div class="prose">
+        <h2 class="h2">Esempio di operazione distressed</h2>
+        <p>Un appartamento a Milano o nell'hinterland con valore di mercato stimato in <strong>220.000 €</strong>. Il debitore è esposto verso il creditore per <strong>170.000 €</strong>. L'immobile è all'inizio di una procedura e vicino all'asta, ma non ancora aggiudicato.</p>
+        <p>Un investitore potrebbe intervenire con una proposta strutturata, acquistando l'immobile a <strong>150.000 €</strong>, permettendo al creditore di chiudere rapidamente, al debitore di evitare l'aggravarsi della procedura e all'investitore di entrare in un'operazione con margine.</p>
+        <p>Dopo l'acquisto: ristrutturazione 20.000 €, costi complessivi 10.000 €, rivendita a <strong>220.000 €</strong>. Margine lordo teorico di circa <strong>40.000 €</strong>.</p>
+      </div>
+      <aside class="card cream">
+        <h4><small>Il metodo Amira NPL</small>Pre-valutazione tecnica</h4>
+        <p class="note" style="color:#5b4a18">Prima di proporre un'operazione viene valutato il quadro complessivo: valore dell'immobile, situazione debitoria, documentazione disponibile, procedura, stato occupativo, potenziale di rivendita, appetibilità sul mercato, costi accessori e margine realistico.</p>
+        <p class="note" style="color:#5b4a18"><strong>Il punto non è vendere un sogno. Il punto è costruire un'operazione sostenibile.</strong></p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BANNER MANIFESTO ============ -->
+<section class="block" style="padding-top:8px">
+  <div class="container">
+    <div class="banner">
+      <div class="small">In sintesi</div>
+      <p>Attraverso esperienza, metodo e conoscenza del mercato, Amira NPL aiuta l'investitore a muoversi in un settore dove le occasioni esistono davvero, ma vanno riconosciute, verificate e gestite con competenza.</p>
+      <div class="quote">Il vero affare non è comprare a poco. Il vero affare è comprare bene.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEAM 1 ============ -->
+<section class="block">
+  <div class="container">
+    <div class="kicker">Il team</div>
+    <h2 class="h2" style="margin-bottom:8px">Geometra Ciro Romaniello</h2>
+    <p style="margin:0 0 28px;color:var(--muted);font-size:14px;max-width:700px">Un professionista che ha costruito la propria competenza sul campo, attraverso una lunga esperienza in vita, lavoro e relazione con le persone.</p>
+    <div class="team">
+      <div class="avatar-wrap">
+        <div class="avatar" aria-label="Foto Ciro Romaniello">
+          <!-- Placeholder avatar -->
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="#143b8a"/>
+                <stop offset="1" stop-color="#0a1e4d"/>
+              </linearGradient>
+            </defs>
+            <rect width="200" height="200" fill="url(#g1)"/>
+            <g transform="translate(40,46)" fill="none">
+              <path d="M0 36 L18 20 L36 36" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M5 34 L5 56 L31 56 L31 34" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/>
+              <rect x="14" y="40" width="8" height="16" fill="#f59016"/>
+              <circle cx="-2" cy="14" r="2" fill="#f59016"/>
+              <circle cx="6" cy="6" r="2" fill="#f59016"/>
+              <circle cx="16" cy="2" r="2" fill="#f59016"/>
+              <path d="M-2 14 L6 6 L16 2" stroke="#f59016" stroke-width="1.6"/>
+              <text x="0" y="80" fill="#fff" font-family="Inter,sans-serif" font-weight="700" font-size="16" letter-spacing="2">AMIRA</text>
+              <text x="4" y="96" fill="#f59016" font-family="Inter,sans-serif" font-weight="700" font-size="11" letter-spacing="3">NPL</text>
+            </g>
+            <text x="100" y="170" text-anchor="middle" fill="#fff" font-family="Cormorant Garamond,serif" font-size="34" font-weight="600">CR</text>
+          </svg>
+        </div>
+        <div class="role-pill"><span class="dot"></span>Senior Advisor — Amira NPL</div>
+      </div>
+      <div class="team-bio prose">
+        <p>Il geometra Ciro Romaniello rappresenta una figura rara nel panorama immobiliare e finanziario: un professionista che non ha costruito la propria competenza soltanto sui libri, sui titoli o sulle formule tecniche, ma soprattutto attraverso una lunga esperienza di vita, di lavoro e di relazione con le persone.</p>
+        <p>La sua storia nasce da lontano, da una giovinezza vissuta intensamente, attraversata da mille lavori, sacrifici, incontri e responsabilità assunte molto presto. Fin da giovanissimo, intorno ai dieci anni, Ciro inizia a conoscere la realtà concreta del lavoro e della strada in una Napoli bella e allo stesso tempo difficile.</p>
+        <p>Quella Napoli, con la sua energia, le sue contraddizioni, la sua umanità e le sue difficoltà, lo ha temprato profondamente. Gli ha insegnato ad affrontare i problemi senza girarci intorno, ad arrangiarsi nel senso più nobile della parola, a trovare soluzioni anche quando le condizioni sembravano complicate.</p>
+        <p>Verso la metà degli anni Ottanta, forte di questa maturità costruita sul campo, Ciro Romaniello costruisce a impronte nel mercato finanziario e immobiliare, distinguendosi per una qualità che ancora oggi rappresenta il cuore della sua impostazione professionale: <em>la capacità di comprendere le situazioni prima ancora dei numeri</em>.</p>
+        <p>Per lui un immobile non è mai soltanto un bene da vendere, acquistare o valutare. Dietro ogni operazione esistono persone, famiglie, debiti, progetti, paure, aspettative, errori da correggere e opportunità da cogliere.</p>
+        <p>Nel corso degli anni ha sviluppato una conoscenza capillare del mercato immobiliare e finanziario: valori, zone, dinamiche commerciali, trattative, criticità tecniche, rapporti con creditori, situazioni debitorie, procedure, aste, saldi e stralci e operazioni immobiliari complesse.</p>
+        <p>Il suo percorso arriva oggi ad <strong>Amira NPL</strong>, dove consolida e mette a sistema le sue innumerevoli competenze. La sua professionalità non è fredda, distaccata o puramente numerica. È una professionalità profondamente umana, fatta di esperienza, equilibrio e capacità di mediazione.</p>
+        <p><em>Dove altri vedono un'asta, lui vede una storia. Dove altri vedono solo un debito, lui vede una possibile soluzione. Dove altri vedono solo un prezzo, lui valuta il contesto, il margine, il rischio, il tempo e la reale sostenibilità dell'operazione.</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEAM 2 ============ -->
+<section class="block">
+  <div class="container">
+    <div class="kicker">Il team</div>
+    <h2 class="h2" style="margin-bottom:8px">Dott. Gaetano Romaniello</h2>
+    <p style="margin:0 0 28px;color:var(--muted);font-size:14px;max-width:700px">Cultura umanistica, esperienza immobiliare-finanziaria e visione tecnologica. Un professionista al confine tra i tre mondi.</p>
+    <div class="team reverse">
+      <div class="team-bio prose">
+        <p>Il Dott. Gaetano Romaniello rappresenta una figura professionale particolare e difficilmente incasellabile in una sola disciplina. Il suo percorso nasce da una formazione profondamente umanistica, si sviluppa nel mondo immobiliare e finanziario, e negli ultimi anni si arricchisce di una forte attenzione verso l'innovazione tecnologica, l'informatica e l'intelligenza artificiale.</p>
+        <p>Fin da giovane si distingue come una personalità promettente nel campo della letteratura, della storia dell'arte e delle discipline umanistiche. Intraprende studi in questi settori con passione, metodo e risultati brillanti, avvicinandosi naturalmente verso una possibile carriera nell'insegnamento.</p>
+        <p>Quella formazione, però, non rimane confinata al mondo accademico. Diventa una parte essenziale del suo modo di osservare la realtà. Conoscere la storia, la letteratura, la cultura significa <em>leggere le situazioni non solo nei loro aspetti tecnici, ma anche nel loro significato più profondo</em>.</p>
+        <p>A un certo punto del suo percorso sceglie di cambiare strada. Abbandona la carriera di professore per seguire le orme del padre, il <strong>geometra Ciro Romaniello</strong>, entrando nel mondo finanziario e immobiliare. Un ambiente molto diverso da quello degli studi umanistici: più dinamico, più competitivo, più operativo.</p>
+        <p>Il mondo immobiliare lo stuzzica da subito proprio per la sua complessità. Non è un settore statico, non è fatto soltanto di compravendite e valutazioni. È un mondo in cui si intrecciano economia, psicologia, diritto, finanza, territorio, relazioni umane, urgenze familiari, opportunità d'investimento e capacità di negoziazione.</p>
+        <p>Nel tempo, il suo percorso si arricchisce ulteriormente grazie a una crescita di profonda attenzione verso le <strong>tecnologie</strong>: informatica, automazione, strumenti digitali e soprattutto <strong>intelligenza artificiale</strong>. Approfondisce piattaforme, flussi di lavoro, sistemi di automazione, agenti AI e le modalità con cui queste tecnologie possono essere integrate nel settore immobiliare e finanziario.</p>
+        <p>Comprende che l'intelligenza artificiale non sostituisce l'esperienza umana, ma può amplificarla: può aiutare a leggere documenti, organizzare informazioni, valutare procedure, creare contenuti, automatizzare processi, migliorare la comunicazione e rendere più efficiente il lavoro quotidiano.</p>
+        <p><em>La sua figura si colloca al punto d'incontro tra cultura umanistica, competenza immobiliare-finanziaria e innovazione tecnologica. Tre mondi apparentemente lontani, ma che nel suo percorso finiscono per dialogare in modo naturale.</em></p>
+      </div>
+      <div class="avatar-wrap">
+        <div class="avatar" aria-label="Foto Gaetano Romaniello">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g2" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="#0c1730"/>
+                <stop offset="1" stop-color="#070d1d"/>
+              </linearGradient>
+              <linearGradient id="g2b" x1="0" x2="1">
+                <stop offset="0" stop-color="#1747c2"/>
+                <stop offset="1" stop-color="#0b2c87"/>
+              </linearGradient>
+            </defs>
+            <rect width="200" height="200" fill="url(#g2)"/>
+            <path d="M0 0 Q90 100 0 200 Z" fill="url(#g2b)"/>
+            <circle cx="40" cy="62" r="14" fill="#e3161c"/>
+            <circle cx="44" cy="58" r="4" fill="#fff"/>
+            <text x="36" y="100" fill="#fff" font-family="Inter,sans-serif" font-weight="800" font-size="22" letter-spacing="1">Sarpi</text>
+            <text x="30" y="115" fill="#fff" font-family="Inter,sans-serif" font-size="7.5" letter-spacing="0.6">Immobiliare Ag. 2 Milano</text>
+            <g transform="translate(110,40)" fill="none">
+              <path d="M0 36 L18 20 L36 36" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M5 34 L5 56 L31 56 L31 34" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/>
+              <rect x="14" y="40" width="8" height="16" fill="#f59016"/>
+              <circle cx="-2" cy="14" r="2" fill="#f59016"/>
+              <circle cx="6" cy="6" r="2" fill="#f59016"/>
+              <circle cx="16" cy="2" r="2" fill="#f59016"/>
+              <path d="M-2 14 L6 6 L16 2" stroke="#f59016" stroke-width="1.6"/>
+            </g>
+            <text x="116" y="118" fill="#fff" font-family="Inter,sans-serif" font-weight="800" font-size="16" letter-spacing="2">AMIRA</text>
+            <text x="124" y="132" fill="#f59016" font-family="Inter,sans-serif" font-weight="700" font-size="9" letter-spacing="3">NPL</text>
+            <text x="100" y="180" text-anchor="middle" fill="#fff" font-family="Cormorant Garamond,serif" font-size="34" font-weight="600">GR</text>
+          </svg>
+        </div>
+        <div class="role-pill"><span class="dot"></span>Strategia &amp; innovazione — Amira NPL</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<a id="contatti"></a>
+<section class="cta">
+  <div class="container">
+    <div class="cta-grid">
+      <div>
+        <div class="kicker">Inizia oggi</div>
+        <h2>Hai un'operazione da valutare?</h2>
+        <p>Inviaci il dossier o prendi un appuntamento. Risposta entro 24 ore lavorative.</p>
+      </div>
+      <div class="cta-buttons">
+        <a class="btn btn-wa" href="https://wa.me/393401940666" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3.6 17.7L2 22l4.4-1.5a11 11 0 0 0 14.1-17zm-8.5 17a8.6 8.6 0 0 1-4.4-1.2l-.3-.2-2.6.9.9-2.5-.2-.3a8.6 8.6 0 1 1 6.6 3.3zm5-6.4c-.3-.1-1.6-.8-1.9-.9s-.4-.1-.6.1-.7.9-.9 1.1-.3.1-.6 0-1.2-.4-2.2-1.3a8.4 8.4 0 0 1-1.5-1.9c-.2-.3 0-.5.1-.6l.5-.5.2-.4v-.4l-.9-2.1c-.2-.5-.5-.4-.6-.5h-.5a1 1 0 0 0-.8.4 3.1 3.1 0 0 0-1 2.4c0 1.4 1 2.8 1.2 3s2.1 3.2 5.1 4.5c2.1 1 2.5.8 3 .7s1.6-.6 1.8-1.3a2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3z"/></svg>
+          WhatsApp
+        </a>
+        <a class="btn btn-mail" href="mailto:amira.npl24@gmail.com">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          Email
+        </a>
+        <a class="btn btn-ghost" href="tel:+393383866596">Chiama</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site">
+  <div class="container">
+    <div class="foot">
+      <div>
+        <h5><span class="brand" style="font-size:22px"><span class="dot"></span>&nbsp;Amira NPL</span></h5>
+        <p>Acquisto e gestione di operazioni immobiliari, NPL, saldo e stralcio.<br/>
+        Selezione curata di dossier, due diligence e supporto al closing.</p>
+      </div>
+      <div>
+        <h5>Sedi</h5>
+        <p>Studio Sarpi — Immobiliare Agenzia 2 Milano<br/>
+        Via Gaetano De Castillia 8<br/>
+        20124 Milano</p>
+      </div>
+      <div>
+        <h5>Contatti</h5>
+        <p>
+          WhatsApp: <a href="https://wa.me/393401940666" target="_blank" rel="noopener">+39 340 194 0666</a><br/>
+          Telefono: <a href="tel:+393383866596">+39 338 386 6596</a><br/>
+          Email: <a href="mailto:amira.npl24@gmail.com">amira.npl24@gmail.com</a>
+        </p>
+      </div>
+    </div>
+    <div class="copyright">
+      <div>© <span id="yr">2026</span> Amira NPL — Tutti i diritti riservati.</div>
+      <div>Le informazioni nella pagina non costituiscono consulenza finanziaria o legale.</div>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
