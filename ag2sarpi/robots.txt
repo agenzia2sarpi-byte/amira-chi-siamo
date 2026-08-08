@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ag2sarpi.vercel.app/sitemap.xml
