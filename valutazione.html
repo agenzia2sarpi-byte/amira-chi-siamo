@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Quanto vale la tua casa a Milano? | AG 2 Sarpi</title>
+<meta name="description" content="Scopri subito, gratis e senza impegno, il valore di vendita o di affitto della tua casa a Milano. Valutazione immediata a cura di AG 2 Sarpi, agenzia immobiliare a Milano." />
+<meta name="robots" content="index,follow" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Quanto vale la tua casa a Milano? | AG 2 Sarpi" />
+<meta property="og:description" content="Valutazione immediata e gratuita della tua casa a Milano, per vendita o affitto." />
+<meta property="og:locale" content="it_IT" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f7f5;
+    --paper:#ffffff;
+    --ink:#14201b;
+    --muted:#5f6b64;
+    --hair:#e4e8e2;
+    --green:#0f3d2e;
+    --green-2:#155c43;
+    --gold:#c8973f;
+    --gold-soft:#f3e7cf;
+    --whatsapp:#25D366;
+    --ok:#0f7a4d;
+    --shadow:0 10px 30px rgba(15,61,46,.10);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.15;margin:0 0 .4em;font-weight:600}
+  a{color:inherit}
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px}
+  .brandbar{background:var(--green);color:#fff}
+  .brandbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;gap:12px}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:700;font-size:20px;letter-spacing:.3px}
+  .logo .mark{width:34px;height:34px;border-radius:8px;background:var(--gold);color:var(--green);display:grid;place-items:center;font-weight:700;font-size:15px}
+  .brandbar small{display:block;font-family:'Inter';font-weight:400;font-size:11px;opacity:.8;letter-spacing:.12em;text-transform:uppercase}
+  .bar-cta{font-size:14px;font-weight:600;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.35);padding:8px 14px;border-radius:999px;white-space:nowrap}
+
+  .hero{background:linear-gradient(160deg,var(--green) 0%,var(--green-2) 100%);color:#fff;padding:54px 0 120px;position:relative;overflow:hidden}
+  .hero .eyebrow{display:inline-block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);background:rgba(200,151,63,.16);border:1px solid rgba(200,151,63,.4);padding:6px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:clamp(30px,6vw,46px);color:#fff;max-width:16ch}
+  .hero p.lead{font-size:clamp(16px,2.4vw,19px);max-width:52ch;color:#e8efe9;margin:.2em 0 0}
+  .hero .reassure{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px 18px;font-size:14px;color:#dfeae2}
+  .hero .reassure span{display:flex;align-items:center;gap:7px}
+  .tick{width:18px;height:18px;border-radius:50%;background:var(--gold);color:var(--green);display:grid;place-items:center;font-size:11px;font-weight:800;flex:none}
+
+  .card{background:var(--paper);border:1px solid var(--hair);border-radius:18px;box-shadow:var(--shadow)}
+  .tool{margin-top:-84px;position:relative;z-index:3;padding:26px}
+  .tool h2{font-size:22px}
+  .tool .sub{color:var(--muted);margin:-.2em 0 18px;font-size:15px}
+
+  .seg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+  .seg input{position:absolute;opacity:0;pointer-events:none}
+  .seg label{display:flex;flex-direction:column;gap:2px;text-align:center;border:1.5px solid var(--hair);border-radius:12px;padding:14px 10px;cursor:pointer;font-weight:600;transition:.15s;background:#fff}
+  .seg label small{font-weight:400;color:var(--muted);font-size:12.5px}
+  .seg input:checked + label{border-color:var(--green);background:#f2f8f4;box-shadow:0 0 0 3px rgba(15,61,46,.08)}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .field{display:flex;flex-direction:column;gap:6px;margin-bottom:2px}
+  .field.full{grid-column:1 / -1}
+  label.lab{font-size:13.5px;font-weight:600;color:var(--ink)}
+  input[type=text],input[type=number],input[type=tel],input[type=email],select{
+    width:100%;padding:12px 13px;border:1.5px solid var(--hair);border-radius:11px;font-size:16px;font-family:inherit;background:#fff;color:var(--ink);transition:.15s
+  }
+  input:focus,select:focus{outline:none;border-color:var(--green-2);box-shadow:0 0 0 3px rgba(21,92,67,.12)}
+  .hint{font-size:12px;color:var(--muted)}
+
+  .btn{appearance:none;border:none;cursor:pointer;font-family:inherit;font-weight:700;font-size:16px;border-radius:12px;padding:15px 20px;width:100%;transition:.15s;display:inline-flex;align-items:center;justify-content:center;gap:9px}
+  .btn-primary{background:var(--gold);color:#241a06}
+  .btn-primary:hover{filter:brightness(1.05)}
+  .btn-green{background:var(--green);color:#fff}
+  .btn-green:hover{background:var(--green-2)}
+  .btn[disabled]{opacity:.55;cursor:not-allowed}
+
+  .result{margin-top:20px;border-radius:14px;padding:22px;background:linear-gradient(160deg,#f2f8f4,#ecf4ee);border:1px solid #d7e7dd;display:none}
+  .result.show{display:block;animation:pop .35s ease}
+  @keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .result .rlabel{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--green-2);font-weight:700}
+  .result .rrange{font-family:'Fraunces',serif;font-size:clamp(26px,6vw,36px);font-weight:700;color:var(--green);margin:6px 0 2px}
+  .result .rnote{font-size:13.5px;color:var(--muted)}
+  .result .rpermq{font-size:14px;color:var(--ink);margin-top:6px}
+
+  .lead{margin-top:18px;padding-top:18px;border-top:1px dashed var(--hair);display:none}
+  .lead.show{display:block}
+  .lead h3{font-size:19px}
+  .lead p.why{color:var(--muted);font-size:14.5px;margin-top:-.2em}
+
+  .consent{display:flex;gap:10px;align-items:flex-start;margin:6px 0 14px;font-size:13px;color:var(--muted)}
+  .consent input{margin-top:3px;width:18px;height:18px;flex:none}
+  .consent a{color:var(--green-2);text-decoration:underline}
+
+  .msg{display:none;margin-top:12px;padding:13px 15px;border-radius:11px;font-size:14.5px}
+  .msg.ok{display:block;background:#e7f6ee;border:1px solid #bfe6cf;color:#0c5b39}
+  .msg.err{display:block;background:#fdecec;border:1px solid #f5c2c2;color:#a01414}
+
+  section.block{padding:46px 0}
+  .block h2{font-size:clamp(22px,4vw,30px);text-align:center}
+  .block .sub{text-align:center;color:var(--muted);max-width:56ch;margin:0 auto 30px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .step{background:var(--paper);border:1px solid var(--hair);border-radius:14px;padding:22px}
+  .step .n{width:34px;height:34px;border-radius:9px;background:var(--gold-soft);color:var(--green);display:grid;place-items:center;font-weight:700;font-family:'Fraunces',serif;margin-bottom:10px}
+  .step h3{font-size:17px}
+  .step p{font-size:14px;color:var(--muted);margin:0}
+
+  .trust{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+  .trust .t{background:var(--paper);border:1px solid var(--hair);border-radius:14px;padding:20px;text-align:center}
+  .trust .t .big{font-family:'Fraunces',serif;font-size:26px;color:var(--green);font-weight:700}
+  .trust .t p{margin:.2em 0 0;font-size:13.5px;color:var(--muted)}
+
+  footer{background:var(--green);color:#d9e5dd;padding:34px 0;font-size:13.5px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:flex-start}
+  footer a{color:#fff}
+  footer .fnote{max-width:52ch;opacity:.8;line-height:1.5}
+
+  .float-wa{position:fixed;right:16px;bottom:16px;background:var(--whatsapp);color:#fff;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.25);z-index:20;text-decoration:none;font-size:26px}
+
+  .modal{position:fixed;inset:0;background:rgba(10,20,15,.55);display:none;align-items:center;justify-content:center;z-index:40;padding:18px}
+  .modal.show{display:flex}
+  .modal .box{background:#fff;border-radius:16px;max-width:640px;max-height:86vh;overflow:auto;padding:26px}
+  .modal h3{font-size:20px}
+  .modal p, .modal li{font-size:13.5px;color:var(--muted)}
+  .modal .close{float:right;cursor:pointer;font-size:22px;line-height:1;color:var(--muted);border:none;background:none}
+
+  @media(max-width:620px){
+    .grid{grid-template-columns:1fr}
+    .steps,.trust{grid-template-columns:1fr}
+    .brandbar .bar-cta{display:none}
+    .hero{padding:40px 0 110px}
+  }
+</style>
+</head>
+<body>
+
+<div class="brandbar">
+  <div class="wrap">
+    <div class="logo"><span class="mark">AG2</span><div>AG 2 Sarpi<small>Agenzia Immobiliare · Milano</small></div></div>
+    <a class="bar-cta" href="#valuta">Valuta la tua casa</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Valutazione gratuita · Milano</span>
+    <h1>Quanto vale davvero la tua casa a Milano?</h1>
+    <p class="lead">Scoprilo subito. Inserisci pochi dati e ricevi una stima immediata del valore di <strong>vendita</strong> o di <strong>affitto</strong>. Gratis e senza impegno.</p>
+    <div class="reassure">
+      <span><span class="tick">✓</span> Stima in 30 secondi</span>
+      <span><span class="tick">✓</span> Basata sui prezzi di zona</span>
+      <span><span class="tick">✓</span> Consulenza gratuita AG 2 Sarpi</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="valuta">
+  <div class="card tool">
+    <h2>Calcola il valore della tua casa</h2>
+    <p class="sub">Compila i campi: la stima appare subito, prima ancora di lasciare i contatti.</p>
+
+    <form id="valForm" novalidate>
+      <div class="seg">
+        <input type="radio" name="scopo" id="scopo-vendita" value="vendita" checked>
+        <label for="scopo-vendita">Voglio vendere<small>Valore di mercato</small></label>
+        <input type="radio" name="scopo" id="scopo-affitto" value="affitto">
+        <label for="scopo-affitto">Voglio affittare<small>Canone mensile</small></label>
+      </div>
+
+      <div class="grid">
+        <div class="field full">
+          <label class="lab" for="zona">Zona di Milano</label>
+          <select id="zona" required>
+            <option value="" selected disabled>Seleziona la zona…</option>
+            <optgroup label="Centro">
+              <option value="centro">Centro storico / Duomo / Brera / Quadrilatero</option>
+              <option value="centro2">Porta Nuova / Garibaldi / Moscova</option>
+            </optgroup>
+            <optgroup label="Semicentro">
+              <option value="semi">Navigli / Porta Genova / Ticinese</option>
+              <option value="semi">Porta Romana / Porta Venezia / Buenos Aires</option>
+              <option value="semi">Isola / Sarpi / Chinatown</option>
+              <option value="semi">Città Studi / Piola / Loreto</option>
+              <option value="semi">Fiera / De Angeli / Pagano / Washington</option>
+            </optgroup>
+            <optgroup label="Periferia">
+              <option value="peri">Bicocca / Niguarda / Affori</option>
+              <option value="peri">Lambrate / Ortica / Rubattino</option>
+              <option value="peri">Bande Nere / Primaticcio / Lorenteggio</option>
+              <option value="peri">Corvetto / Rogoredo / Mecenate</option>
+              <option value="peri">Barona / Gratosoglio / Famagosta</option>
+              <option value="peri">Bovisa / Dergano / Villapizzone</option>
+            </optgroup>
+            <optgroup label="Altro">
+              <option value="peri">Altra zona di Milano città</option>
+              <option value="hinter">Hinterland / Comune limitrofo</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="field">
+          <label class="lab" for="mq">Superficie (m²)</label>
+          <input type="number" id="mq" min="15" max="1000" placeholder="es. 75" required>
+        </div>
+
+        <div class="field">
+          <label class="lab" for="stato">Stato dell'immobile</label>
+          <select id="stato" required>
+            <option value="1.18">Nuovo / recente costruzione</option>
+            <option value="1.08">Ristrutturato</option>
+            <option value="1" selected>Buono / abitabile</option>
+            <option value="0.82">Da ristrutturare</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label class="lab" for="tipologia">Tipologia</label>
+          <select id="tipologia">
+            <option value="1">Appartamento</option>
+            <option value="1.05">Attico / ultimo piano</option>
+            <option value="1.12">Villa / indipendente</option>
+            <option value="0.9">Piano terra / seminterrato</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label class="lab" for="ascensore">Ascensore</label>
+          <select id="ascensore">
+            <option value="1">Sì</option>
+            <option value="0.97">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="margin-top:16px">
+        <button type="button" class="btn btn-green" id="calcBtn">Calcola il valore →</button>
+      </div>
+    </form>
+
+    <!-- RISULTATO -->
+    <div class="result" id="result">
+      <div class="rlabel" id="rLabel">Stima di vendita</div>
+      <div class="rrange" id="rRange">—</div>
+      <div class="rpermq" id="rPerMq"></div>
+      <div class="rnote">Stima indicativa basata sui prezzi medi della zona. Il valore reale dipende da piano, esposizione, spese condominiali, classe energetica e stato preciso: te lo definiamo noi con un sopralluogo gratuito.</div>
+    </div>
+
+    <!-- LEAD -->
+    <div class="lead" id="leadBox">
+      <h3>Ricevi la valutazione dettagliata gratuita</h3>
+      <p class="why">Ti inviamo il report completo della tua zona e ti richiamiamo per una consulenza gratuita, senza impegno. Lascia i tuoi contatti:</p>
+      <form id="leadForm" novalidate>
+        <div class="grid">
+          <div class="field"><label class="lab" for="nome">Nome</label><input type="text" id="nome" autocomplete="given-name" required></div>
+          <div class="field"><label class="lab" for="cognome">Cognome</label><input type="text" id="cognome" autocomplete="family-name" required></div>
+          <div class="field"><label class="lab" for="tel">Telefono / WhatsApp</label><input type="tel" id="tel" autocomplete="tel" placeholder="es. 340 1234567" required></div>
+          <div class="field"><label class="lab" for="email">Email</label><input type="email" id="email" autocomplete="email" placeholder="tua@email.it" required></div>
+          <div class="field full"><label class="lab" for="indirizzo">Indirizzo o via (facoltativo)</label><input type="text" id="indirizzo" placeholder="Via e civico — resta riservato" autocomplete="off"></div>
+        </div>
+        <label class="consent">
+          <input type="checkbox" id="consenso" required>
+          <span>Ho letto l'<a href="#" id="openPrivacy">informativa privacy</a> e acconsento a essere ricontattato/a da AG 2 Sarpi per ricevere la valutazione e informazioni sui servizi. (art. 6 e 7 GDPR)</span>
+        </label>
+        <button type="submit" class="btn btn-primary" id="sendBtn">Ricevi la valutazione e fatti richiamare</button>
+        <div class="msg" id="leadMsg"></div>
+      </form>
+    </div>
+  </div>
+</main>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Come funziona</h2>
+    <p class="sub">Semplice, trasparente e senza costi. Nessun obbligo di affidarci l'incarico.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Inserisci i dati</h3><p>Zona, superficie e stato della casa. Ottieni una stima immediata basata sui prezzi reali del quartiere.</p></div>
+      <div class="step"><div class="n">2</div><h3>Ricevi il report</h3><p>Ti mandiamo la valutazione dettagliata della tua zona e l'andamento dei prezzi, gratis.</p></div>
+      <div class="step"><div class="n">3</div><h3>Parliamone</h3><p>Un consulente AG 2 Sarpi ti richiama per un sopralluogo gratuito e una stima precisa, se lo desideri.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" style="background:#eef3ef">
+  <div class="wrap">
+    <h2>Perché AG 2 Sarpi</h2>
+    <p class="sub">Agenzia immobiliare a Milano. Conosciamo il mercato quartiere per quartiere.</p>
+    <div class="trust">
+      <div class="t"><div class="big">Milano</div><p>Specializzati sulla città e sull'hinterland</p></div>
+      <div class="t"><div class="big">Gratis</div><p>Valutazione e sopralluogo senza costi né impegno</p></div>
+      <div class="t"><div class="big">Vendita &amp; Affitto</div><p>Ti seguiamo in entrambi i casi, dall'inizio al rogito o al contratto</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="logo" style="color:#fff"><span class="mark">AG2</span> AG 2 Sarpi</div>
+      <p class="fnote" style="margin-top:10px">Agenzia immobiliare · Milano<br>Email: <a href="mailto:agenzia2sarpi@gmail.com">agenzia2sarpi@gmail.com</a></p>
+    </div>
+    <div class="fnote">
+      <strong style="color:#fff">Privacy</strong><br>
+      I dati inseriti sono trattati da AG 2 Sarpi solo per fornirti la valutazione richiesta e ricontattarti. Non vengono ceduti a terzi. Puoi chiedere la cancellazione in ogni momento scrivendo a agenzia2sarpi@gmail.com. <a href="#" id="openPrivacy2">Informativa completa</a>.
+    </div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/393401940666?text=Ciao%20AG%202%20Sarpi%2C%20vorrei%20una%20valutazione" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414z"/></svg>
+</a>
+
+<!-- MODALE PRIVACY -->
+<div class="modal" id="privacyModal">
+  <div class="box">
+    <button class="close" id="closePrivacy" aria-label="Chiudi">×</button>
+    <h3>Informativa privacy (art. 13 GDPR)</h3>
+    <p><strong>Titolare del trattamento:</strong> AG 2 Sarpi — agenzia immobiliare, Milano. Contatto: agenzia2sarpi@gmail.com.</p>
+    <p><strong>Quali dati raccogliamo:</strong> i dati che inserisci volontariamente in questo modulo (nome, cognome, telefono, email, dati dell'immobile). Non raccogliamo dati a tua insaputa.</p>
+    <p><strong>Perché li trattiamo:</strong> per elaborare e inviarti la valutazione richiesta e per ricontattarti in merito ai nostri servizi immobiliari, sulla base del tuo consenso (art. 6.1.a GDPR) e per rispondere alla tua richiesta.</p>
+    <p><strong>Per quanto tempo:</strong> conserviamo i dati per il tempo necessario a gestire la tua richiesta e, se non diventi cliente, li cancelliamo su tua richiesta o entro un periodo ragionevole.</p>
+    <p><strong>A chi li comunichiamo:</strong> a nessun terzo per finalità di marketing. Non vendiamo né cediamo i tuoi dati.</p>
+    <p><strong>I tuoi diritti:</strong> puoi accedere, correggere, cancellare i tuoi dati, opporti al trattamento o revocare il consenso in qualsiasi momento scrivendo a agenzia2sarpi@gmail.com. Hai diritto di reclamo al Garante per la protezione dei dati personali.</p>
+    <p style="font-size:12px;opacity:.7">Nota: questo è un testo base. Prima della pubblicazione definitiva completa i dati del titolare (ragione sociale, P. IVA, sede, eventuale DPO) con il tuo consulente.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* =========================================================
+     CONFIGURAZIONE INVIO LEAD
+     ---------------------------------------------------------
+     Per ricevere i contatti sulla tua email (agenzia2sarpi@gmail.com)
+     inserisci qui sotto la tua Access Key gratuita di Web3Forms:
+       1) Vai su https://web3forms.com
+       2) Inserisci agenzia2sarpi@gmail.com e premi "Create Access Key"
+       3) Ricevi la key via email e incollala qui sotto al posto di INSERISCI_LA_TUA_ACCESS_KEY
+     Finché non è impostata, il modulo apre l'app di posta come ripiego.
+     ========================================================= */
+  var WEB3FORMS_ACCESS_KEY = "INSERISCI_LA_TUA_ACCESS_KEY";
+  var DEST_EMAIL = "agenzia2sarpi@gmail.com";
+
+  /* Prezzi medi indicativi €/m² per Milano (vendita) e €/m²/mese (affitto).
+     Valori di riferimento aggiornabili: da rivedere periodicamente coi dati OMI/mercato. */
+  var PREZZI = {
+    centro:  {vendita:11200, affitto:31},
+    centro2: {vendita:10200, affitto:29},
+    semi:    {vendita:6300,  affitto:22},
+    peri:    {vendita:4100,  affitto:16},
+    hinter:  {vendita:2600,  affitto:12}
+  };
+
+  var $ = function(id){ return document.getElementById(id); };
+  var fmtEur = function(n){ return new Intl.NumberFormat('it-IT').format(Math.round(n)); };
+
+  var lastValuation = null;
+
+  function calcola(){
+    var zonaSel = $('zona');
+    var zona = zonaSel.value;
+    var mq = parseFloat($('mq').value);
+    if(!zona){ zonaSel.focus(); zonaSel.style.borderColor='#c0392b'; return; }
+    zonaSel.style.borderColor='';
+    if(!mq || mq < 15){ $('mq').focus(); $('mq').style.borderColor='#c0392b'; return; }
+    $('mq').style.borderColor='';
+
+    var scopo = document.querySelector('input[name="scopo"]:checked').value;
+    var stato = parseFloat($('stato').value);
+    var tipo  = parseFloat($('tipologia').value);
+    var asc   = parseFloat($('ascensore').value);
+    var base  = PREZZI[zona] ? PREZZI[zona][scopo] : PREZZI.peri[scopo];
+
+    var permq = base * stato * tipo * asc;
+    var totale = permq * mq;
+    // fascia +/- 8%
+    var low = totale * 0.92, high = totale * 1.08;
+
+    var zonaTxt = zonaSel.options[zonaSel.selectedIndex].text;
+    lastValuation = {
+      scopo: scopo, zona: zonaTxt, mq: mq,
+      stato: $('stato').options[$('stato').selectedIndex].text,
+      tipologia: $('tipologia').options[$('tipologia').selectedIndex].text,
+      ascensore: $('ascensore').options[$('ascensore').selectedIndex].text,
+      permq: Math.round(permq), low: Math.round(low), high: Math.round(high)
+    };
+
+    if(scopo === 'affitto'){
+      $('rLabel').textContent = 'Stima del canone di affitto';
+      $('rRange').textContent = '€ ' + fmtEur(low) + ' – € ' + fmtEur(high) + ' /mese';
+      $('rPerMq').textContent = 'Circa € ' + fmtEur(permq) + '/m² al mese · ' + mq + ' m²';
+    } else {
+      $('rLabel').textContent = 'Stima del valore di vendita';
+      $('rRange').textContent = '€ ' + fmtEur(low) + ' – € ' + fmtEur(high);
+      $('rPerMq').textContent = 'Circa € ' + fmtEur(permq) + '/m² · ' + mq + ' m²';
+    }
+    $('result').classList.add('show');
+    $('leadBox').classList.add('show');
+    $('result').scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  $('calcBtn').addEventListener('click', calcola);
+
+  // Ricalcolo live se cambia lo scopo dopo un primo calcolo
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="scopo"]'), function(r){
+    r.addEventListener('change', function(){ if(lastValuation) calcola(); });
+  });
+
+  // Privacy modal
+  function openModal(e){ if(e) e.preventDefault(); $('privacyModal').classList.add('show'); }
+  function closeModal(){ $('privacyModal').classList.remove('show'); }
+  $('openPrivacy').addEventListener('click', openModal);
+  $('openPrivacy2').addEventListener('click', openModal);
+  $('closePrivacy').addEventListener('click', closeModal);
+  $('privacyModal').addEventListener('click', function(e){ if(e.target === this) closeModal(); });
+
+  function showMsg(type, text){
+    var m = $('leadMsg');
+    m.className = 'msg ' + type;
+    m.textContent = text;
+  }
+
+  function mailtoFallback(payload){
+    var body = encodeURIComponent(
+      'NUOVO LEAD VALUTAZIONE — AG 2 Sarpi\n\n' +
+      'Nome: ' + payload.nome + ' ' + payload.cognome + '\n' +
+      'Telefono: ' + payload.telefono + '\n' +
+      'Email: ' + payload.email + '\n' +
+      'Indirizzo: ' + (payload.indirizzo || '-') + '\n\n' +
+      'RICHIESTA: ' + payload.scopo.toUpperCase() + '\n' +
+      'Zona: ' + payload.zona + '\n' +
+      'Superficie: ' + payload.mq + ' m²\n' +
+      'Stato: ' + payload.stato + '\n' +
+      'Tipologia: ' + payload.tipologia + '\n' +
+      'Stima: € ' + fmtEur(payload.low) + ' - € ' + fmtEur(payload.high) +
+        (payload.scopo === 'affitto' ? ' /mese' : '') + '\n'
+    );
+    window.location.href = 'mailto:' + DEST_EMAIL +
+      '?subject=' + encodeURIComponent('Nuovo lead valutazione — ' + payload.nome + ' ' + payload.cognome) +
+      '&body=' + body;
+  }
+
+  $('leadForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!lastValuation){ showMsg('err','Prima calcola il valore della casa.'); return; }
+    var nome = $('nome').value.trim(), cognome = $('cognome').value.trim();
+    var tel = $('tel').value.trim(), email = $('email').value.trim();
+    if(!nome || !cognome || !tel || !email){ showMsg('err','Compila nome, cognome, telefono ed email.'); return; }
+    if(!$('consenso').checked){ showMsg('err','Per procedere serve il consenso al trattamento dei dati.'); return; }
+
+    var payload = {
+      nome:nome, cognome:cognome, telefono:tel, email:email,
+      indirizzo: $('indirizzo').value.trim(),
+      scopo:lastValuation.scopo, zona:lastValuation.zona, mq:lastValuation.mq,
+      stato:lastValuation.stato, tipologia:lastValuation.tipologia,
+      low:lastValuation.low, high:lastValuation.high, permq:lastValuation.permq
+    };
+
+    var btn = $('sendBtn');
+    btn.disabled = true; btn.textContent = 'Invio in corso…';
+
+    if(!WEB3FORMS_ACCESS_KEY || WEB3FORMS_ACCESS_KEY === 'INSERISCI_LA_TUA_ACCESS_KEY'){
+      // Ripiego: apre l'app di posta finché la Access Key non è configurata
+      mailtoFallback(payload);
+      showMsg('ok','Apriamo la tua app di posta per completare l\'invio. (Configura Web3Forms per l\'invio automatico.)');
+      btn.disabled = false; btn.textContent = 'Ricevi la valutazione e fatti richiamare';
+      return;
+    }
+
+    var data = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject: 'Nuovo lead valutazione — ' + nome + ' ' + cognome + ' (' + payload.scopo + ')',
+      from_name: 'Valutazione AG 2 Sarpi',
+      to: DEST_EMAIL,
+      Nome: nome + ' ' + cognome,
+      Telefono: tel,
+      Email: email,
+      Indirizzo: payload.indirizzo || '-',
+      Richiesta: payload.scopo,
+      Zona: payload.zona,
+      Superficie_mq: payload.mq,
+      Stato: payload.stato,
+      Tipologia: payload.tipologia,
+      Stima_min: '€ ' + fmtEur(payload.low) + (payload.scopo==='affitto'?'/mese':''),
+      Stima_max: '€ ' + fmtEur(payload.high) + (payload.scopo==='affitto'?'/mese':''),
+      Consenso_privacy: 'SI (' + new Date().toISOString() + ')'
+    };
+
+    fetch('https://api.web3forms.com/submit', {
+      method:'POST',
+      headers:{'Content-Type':'application/json', 'Accept':'application/json'},
+      body: JSON.stringify(data)
+    }).then(function(r){ return r.json(); }).then(function(res){
+      if(res.success){
+        $('leadForm').reset();
+        showMsg('ok','Grazie ' + nome + '! Abbiamo ricevuto la tua richiesta: ti invieremo la valutazione e ti ricontatteremo al più presto.');
+        btn.textContent = '✓ Richiesta inviata';
+      } else {
+        throw new Error('web3forms');
+      }
+    }).catch(function(){
+      mailtoFallback(payload);
+      showMsg('ok','Completiamo l\'invio dalla tua app di posta.');
+      btn.disabled = false; btn.textContent = 'Ricevi la valutazione e fatti richiamare';
+    });
+  });
+})();
+</script>
+</body>
+</html>
