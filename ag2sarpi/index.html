@@ -143,6 +143,11 @@
   .step h3{font-size:17px}
   .step p{font-size:14px;color:var(--muted);margin:0}
 
+  .zone{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .zone a{display:block;background:var(--paper);border:1px solid var(--hair);border-radius:14px;padding:16px 18px;text-decoration:none;font-weight:600;font-size:15.5px;transition:.15s}
+  .zone a:hover{border-color:var(--green-2);box-shadow:var(--shadow)}
+  .zone a small{display:block;font-weight:400;font-size:12.5px;color:var(--muted);margin-top:3px}
+
   .trust{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
   .trust .t{background:var(--paper);border:1px solid var(--hair);border-radius:14px;padding:20px;text-align:center}
   .trust .t .big{font-family:'Fraunces',serif;font-size:26px;color:var(--green);font-weight:700}
@@ -164,7 +169,7 @@
 
   @media(max-width:620px){
     .grid{grid-template-columns:1fr}
-    .steps,.trust{grid-template-columns:1fr}
+    .steps,.trust,.zone{grid-template-columns:1fr}
     .brandbar .bar-cta{display:none}
     .hero{padding:40px 0 110px}
   }
@@ -416,6 +421,21 @@
       <div class="t"><div class="big">Gratis</div><p>Valutazione e sopralluogo senza costi né impegno</p></div>
       <div class="t"><div class="big">Vendita &amp; Affitto</div><p>Ti seguiamo in entrambi i casi, dall'inizio al rogito o al contratto</p></div>
     </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Valutazione casa per zona di Milano</h2>
+    <p class="sub">Ogni quartiere ha un mercato suo. Qui trovi le quotazioni di zona e cosa sposta davvero il prezzo, strada per strada.</p>
+    <ul class="zone">
+      <li><a href="/valutazione-casa-paolo-sarpi-milano">Paolo Sarpi e Chinatown<small>Semicentro · la nostra zona</small></a></li>
+      <li><a href="/valutazione-casa-isola-milano">Isola<small>Semicentro · Porta Nuova</small></a></li>
+      <li><a href="/valutazione-casa-centro-brera-milano">Centro storico, Brera e Quadrilatero<small>Centro</small></a></li>
+      <li><a href="/valutazione-casa-porta-romana-venezia-milano">Porta Romana e Porta Venezia<small>Semicentro · Buenos Aires</small></a></li>
+      <li><a href="/valutazione-casa-citta-studi-milano">Città Studi, Piola e Loreto<small>Semicentro · zona università</small></a></li>
+      <li><a href="/valutazione-casa-fiera-de-angeli-milano">Fiera, De Angeli e Pagano<small>Semicentro · CityLife</small></a></li>
+    </ul>
   </div>
 </section>
 
