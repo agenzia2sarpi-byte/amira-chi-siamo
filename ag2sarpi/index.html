@@ -113,6 +113,12 @@
   .result .rrange{font-family:'Fraunces',serif;font-size:clamp(26px,6vw,36px);font-weight:700;color:var(--green);margin:6px 0 2px}
   .result .rnote{font-size:13.5px;color:var(--muted)}
   .result .rpermq{font-size:14px;color:var(--ink);margin-top:6px}
+  /* Stima puntuale: si sblocca dopo l'invio dei contatti, in oro per distinguerla */
+  .result.precisa{background:linear-gradient(160deg,#fdf6e8,#f7edd9);border-color:#e8d4a8}
+  .result.precisa .rlabel{color:#8a6520}
+  .result.precisa .rrange{color:#6b4d12}
+  .locknote{margin-top:10px;padding-top:12px;border-top:1px dashed #cfe0d5;font-size:14px;color:var(--green-2);font-weight:600;display:flex;gap:8px;align-items:flex-start}
+  .lockicon{flex:none;font-size:15px;line-height:1.5}
 
   .lead{margin-top:18px;padding-top:18px;border-top:1px dashed var(--hair);display:none}
   .lead.show{display:block}
@@ -234,7 +240,7 @@
 <main class="wrap" id="valuta">
   <div class="card tool">
     <h2>Calcola il valore della tua casa</h2>
-    <p class="sub">Compila i campi: la stima appare subito, prima ancora di lasciare i contatti.</p>
+    <p class="sub">Compila i campi: vedi subito la fascia di valore della tua zona, poi sblocchi la stima puntuale del tuo immobile.</p>
 
     <form id="valForm" novalidate>
       <div class="seg">
@@ -334,18 +340,27 @@
       </div>
     </form>
 
-    <!-- RISULTATO -->
+    <!-- RISULTATO: fascia della zona, visibile subito -->
     <div class="result" id="result">
-      <div class="rlabel" id="rLabel">Stima di vendita</div>
+      <div class="rlabel" id="rLabel">Fascia di valore della zona</div>
       <div class="rrange" id="rRange">—</div>
       <div class="rpermq" id="rPerMq"></div>
-      <div class="rnote">Stima indicativa basata sui prezzi medi della zona. Il valore reale dipende da piano, esposizione, spese condominiali, classe energetica e stato preciso: te lo definiamo noi con un sopralluogo gratuito.</div>
+      <div class="rnote">È la fascia indicativa della zona per un immobile con le caratteristiche che hai indicato.</div>
+      <div class="locknote" id="lockNote"><span class="lockicon">🔒</span><span>La <strong>stima puntuale del tuo immobile</strong>, con la fascia ristretta, si sblocca qui sotto.</span></div>
+    </div>
+
+    <!-- STIMA PUNTUALE: si sblocca dopo l'invio dei contatti -->
+    <div class="result precisa" id="resultPrecisa">
+      <div class="rlabel" id="rpLabel">Stima puntuale del tuo immobile</div>
+      <div class="rrange" id="rpRange">—</div>
+      <div class="rpermq" id="rpPerMq"></div>
+      <div class="rnote">Il valore reale dipende anche da piano, esposizione, spese condominiali e classe energetica: te lo definiamo con un sopralluogo gratuito, senza impegno.</div>
     </div>
 
     <!-- LEAD -->
     <div class="lead" id="leadBox">
-      <h3>Ricevi la valutazione dettagliata gratuita</h3>
-      <p class="why">Ti inviamo il report completo della tua zona e ti richiamiamo per una consulenza gratuita, senza impegno. Lascia i tuoi contatti:</p>
+      <h3 id="leadTitle">Sblocca la stima puntuale del tuo immobile</h3>
+      <p class="why" id="leadWhy">Lascia i tuoi contatti: vedi subito la stima puntuale, ricevi il report completo della tua zona e ti richiamiamo per una consulenza gratuita, senza impegno.</p>
       <form id="leadForm" novalidate>
         <div class="grid">
           <div class="field"><label class="lab" for="nome">Nome</label><input type="text" id="nome" autocomplete="given-name" required></div>
@@ -355,9 +370,13 @@
         </div>
         <label class="consent">
           <input type="checkbox" id="consenso" required>
-          <span>Ho letto l'<a href="#" id="openPrivacy">informativa privacy</a> e acconsento a essere ricontattato/a da AG 2 Sarpi per ricevere la valutazione e informazioni sui servizi. (art. 6 e 7 GDPR)</span>
+          <span>Ho letto l'<a href="#" id="openPrivacy">informativa privacy</a> e acconsento al trattamento dei miei dati per ricevere la valutazione richiesta ed essere ricontattato/a in merito. <strong>Necessario</strong> per ottenere la stima. (art. 6 e 13 GDPR)</span>
         </label>
-        <button type="submit" class="btn btn-primary" id="sendBtn">Ricevi la valutazione e fatti richiamare</button>
+        <label class="consent">
+          <input type="checkbox" id="consensoMkt">
+          <span>Acconsento inoltre a ricevere da AG 2 Sarpi comunicazioni commerciali e informazioni sui servizi immobiliari. <em>Facoltativo</em>: la valutazione la ottieni comunque.</span>
+        </label>
+        <button type="submit" class="btn btn-primary" id="sendBtn">Mostrami la stima puntuale</button>
         <div class="msg" id="leadMsg"></div>
       </form>
     </div>
@@ -435,7 +454,9 @@
     <h3>Informativa privacy (art. 13 GDPR)</h3>
     <p><strong>Titolare del trattamento:</strong> AG 2 Sarpi — agenzia immobiliare, Via Arrigo Boito 8, 20121 Milano. Contatto: agenzia2sarpi@gmail.com.</p>
     <p><strong>Quali dati raccogliamo:</strong> i dati che inserisci volontariamente in questo modulo (nome, cognome, telefono, email, dati dell'immobile). Non raccogliamo dati a tua insaputa.</p>
-    <p><strong>Perché li trattiamo:</strong> per elaborare e inviarti la valutazione richiesta e per ricontattarti in merito ai nostri servizi immobiliari, sulla base del tuo consenso (art. 6.1.a GDPR) e per rispondere alla tua richiesta.</p>
+    <p><strong>Perché li trattiamo, e con quali consensi:</strong> distinguiamo due finalità.</p>
+    <p style="margin-left:14px"><strong>1. Valutazione e riscontro (necessario).</strong> Trattiamo i tuoi dati per elaborarti la valutazione, mostrartela, inviartela e ricontattarti in merito a questa specifica richiesta. Senza questi dati non possiamo fornirti la stima puntuale: il consenso qui è la condizione del servizio che ci chiedi (art. 6.1.a e 6.1.b GDPR).</p>
+    <p style="margin-left:14px"><strong>2. Comunicazioni commerciali (facoltativo).</strong> Solo se spunti la seconda casella ti inviamo proposte, novità e informazioni sui nostri servizi immobiliari oltre a questa richiesta. <strong>È libero e non condiziona la valutazione:</strong> puoi ottenere la stima anche lasciandolo vuoto, e puoi revocarlo quando vuoi senza perdere nulla.</p>
     <p><strong>Per quanto tempo:</strong> conserviamo i dati per il tempo necessario a gestire la tua richiesta e, se non diventi cliente, li cancelliamo su tua richiesta o entro un periodo ragionevole.</p>
     <p><strong>A chi li comunichiamo:</strong> a nessun terzo per finalità di marketing. Non vendiamo né cediamo i tuoi dati.</p>
     <p><strong>I tuoi diritti:</strong> puoi accedere, correggere, cancellare i tuoi dati, opporti al trattamento o revocare il consenso in qualsiasi momento scrivendo a agenzia2sarpi@gmail.com. Hai diritto di reclamo al Garante per la protezione dei dati personali.</p>
@@ -488,6 +509,9 @@
   var fmtEur = function(n){ return new Intl.NumberFormat('it-IT').format(Math.round(n)); };
 
   var lastValuation = null;
+  /* Diventa true quando il visitatore ha lasciato i contatti: da quel momento
+     la stima puntuale resta visibile anche se ricalcola cambiando i dati. */
+  var sbloccato = false;
 
   function calcola(){
     var zonaSel = $('zona');
@@ -506,8 +530,11 @@
 
     var permq = base * stato * tipo * asc;
     var totale = permq * mq;
-    // fascia +/- 8%
-    var low = totale * 0.92, high = totale * 1.08;
+    /* Due fasce sullo stesso calcolo:
+       - larga (+/- 20%): la forchetta di zona, mostrata subito a tutti;
+       - stretta (+/- 8%): la stima puntuale, che si sblocca coi contatti. */
+    var low  = totale * 0.80, high  = totale * 1.20;
+    var plow = totale * 0.92, phigh = totale * 1.08;
 
     var zonaTxt = zonaSel.options[zonaSel.selectedIndex].text;
     lastValuation = {
@@ -515,21 +542,41 @@
       stato: $('stato').options[$('stato').selectedIndex].text,
       tipologia: $('tipologia').options[$('tipologia').selectedIndex].text,
       ascensore: $('ascensore').options[$('ascensore').selectedIndex].text,
-      permq: Math.round(permq), low: Math.round(low), high: Math.round(high)
+      indirizzo: $('indirizzo').value.trim(),
+      permq: Math.round(permq),
+      low: Math.round(low), high: Math.round(high),
+      plow: Math.round(plow), phigh: Math.round(phigh)
     };
 
-    if(scopo === 'affitto'){
-      $('rLabel').textContent = 'Stima del canone di affitto';
-      $('rRange').textContent = '€ ' + fmtEur(low) + ' – € ' + fmtEur(high) + ' /mese';
-      $('rPerMq').textContent = 'Circa € ' + fmtEur(permq) + '/m² al mese · ' + mq + ' m²';
-    } else {
-      $('rLabel').textContent = 'Stima del valore di vendita';
-      $('rRange').textContent = '€ ' + fmtEur(low) + ' – € ' + fmtEur(high);
-      $('rPerMq').textContent = 'Circa € ' + fmtEur(permq) + '/m² · ' + mq + ' m²';
-    }
+    var mese = (scopo === 'affitto') ? ' /mese' : '';
+    $('rLabel').textContent = (scopo === 'affitto')
+      ? 'Fascia dei canoni della zona'
+      : 'Fascia di valore della zona';
+    $('rRange').textContent = '€ ' + fmtEur(low) + ' – € ' + fmtEur(high) + mese;
+    $('rPerMq').textContent = (scopo === 'affitto')
+      ? 'Circa € ' + fmtEur(permq) + '/m² al mese · ' + mq + ' m²'
+      : 'Circa € ' + fmtEur(permq) + '/m² · ' + mq + ' m²';
+
     $('result').classList.add('show');
     $('leadBox').classList.add('show');
+    if(sbloccato) mostraPrecisa();
     $('result').scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  /* Mostra la fascia ristretta. Chiamata solo dopo l'invio dei contatti. */
+  function mostraPrecisa(){
+    if(!lastValuation) return;
+    var v = lastValuation;
+    var mese = (v.scopo === 'affitto') ? ' /mese' : '';
+    $('rpLabel').textContent = (v.scopo === 'affitto')
+      ? 'Canone puntuale del tuo immobile'
+      : 'Stima puntuale del tuo immobile';
+    $('rpRange').textContent = '€ ' + fmtEur(v.plow) + ' – € ' + fmtEur(v.phigh) + mese;
+    $('rpPerMq').textContent = v.indirizzo ? v.indirizzo : v.zona;
+    $('resultPrecisa').classList.add('show');
+    $('lockNote').style.display = 'none';
+    $('leadTitle').textContent = 'Stima puntuale sbloccata';
+    $('leadWhy').textContent = 'Ti inviamo il report completo della tua zona e ti richiamiamo per una consulenza gratuita, senza impegno. Se cambi i dati dell\'immobile, la stima si aggiorna qui sopra.';
   }
 
   $('calcBtn').addEventListener('click', calcola);
@@ -565,8 +612,11 @@
       'Superficie: ' + payload.mq + ' m²\n' +
       'Stato: ' + payload.stato + '\n' +
       'Tipologia: ' + payload.tipologia + '\n' +
-      'Stima: € ' + fmtEur(payload.low) + ' - € ' + fmtEur(payload.high) +
-        (payload.scopo === 'affitto' ? ' /mese' : '') + '\n'
+      'Stima puntuale: € ' + fmtEur(payload.plow) + ' - € ' + fmtEur(payload.phigh) +
+        (payload.scopo === 'affitto' ? ' /mese' : '') + '\n' +
+      'Fascia di zona: € ' + fmtEur(payload.low) + ' - € ' + fmtEur(payload.high) +
+        (payload.scopo === 'affitto' ? ' /mese' : '') + '\n' +
+      'Consenso marketing: ' + (payload.marketing ? 'SI' : 'NO') + '\n'
     );
     window.location.href = 'mailto:' + DEST_EMAIL +
       '?subject=' + encodeURIComponent('Nuovo lead valutazione — ' + payload.nome + ' ' + payload.cognome) +
@@ -579,14 +629,16 @@
     var nome = $('nome').value.trim(), cognome = $('cognome').value.trim();
     var tel = $('tel').value.trim(), email = $('email').value.trim();
     if(!nome || !cognome || !tel || !email){ showMsg('err','Compila nome, cognome, telefono ed email.'); return; }
-    if(!$('consenso').checked){ showMsg('err','Per procedere serve il consenso al trattamento dei dati.'); return; }
+    if(!$('consenso').checked){ showMsg('err','Per ricevere la stima serve il consenso al trattamento dei dati.'); return; }
+    var mkt = $('consensoMkt').checked;
 
     var payload = {
       nome:nome, cognome:cognome, telefono:tel, email:email,
       indirizzo: $('indirizzo').value.trim(),
       scopo:lastValuation.scopo, zona:lastValuation.zona, mq:lastValuation.mq,
       stato:lastValuation.stato, tipologia:lastValuation.tipologia,
-      low:lastValuation.low, high:lastValuation.high, permq:lastValuation.permq
+      low:lastValuation.low, high:lastValuation.high, permq:lastValuation.permq,
+      plow:lastValuation.plow, phigh:lastValuation.phigh, marketing:mkt
     };
 
     var btn = $('sendBtn');
@@ -596,7 +648,8 @@
       // Ripiego: apre l'app di posta finché la Access Key non è configurata
       mailtoFallback(payload);
       showMsg('ok','Apriamo la tua app di posta per completare l\'invio. (Configura Web3Forms per l\'invio automatico.)');
-      btn.disabled = false; btn.textContent = 'Ricevi la valutazione e fatti richiamare';
+      sbloccato = true; mostraPrecisa();
+      btn.disabled = false; btn.textContent = 'Mostrami la stima puntuale';
       return;
     }
 
@@ -614,9 +667,11 @@
       Superficie_mq: payload.mq,
       Stato: payload.stato,
       Tipologia: payload.tipologia,
-      Stima_min: '€ ' + fmtEur(payload.low) + (payload.scopo==='affitto'?'/mese':''),
-      Stima_max: '€ ' + fmtEur(payload.high) + (payload.scopo==='affitto'?'/mese':''),
-      Consenso_privacy: 'SI (' + new Date().toISOString() + ')'
+      Stima_min: '€ ' + fmtEur(payload.plow) + (payload.scopo==='affitto'?'/mese':''),
+      Stima_max: '€ ' + fmtEur(payload.phigh) + (payload.scopo==='affitto'?'/mese':''),
+      Fascia_zona: '€ ' + fmtEur(payload.low) + ' - € ' + fmtEur(payload.high) + (payload.scopo==='affitto'?'/mese':''),
+      Consenso_valutazione: 'SI (' + new Date().toISOString() + ')',
+      Consenso_marketing: payload.marketing ? 'SI (' + new Date().toISOString() + ')' : 'NO'
     };
 
     fetch('https://api.web3forms.com/submit', {
@@ -626,15 +681,18 @@
     }).then(function(r){ return r.json(); }).then(function(res){
       if(res.success){
         $('leadForm').reset();
-        showMsg('ok','Grazie ' + nome + '! Abbiamo ricevuto la tua richiesta: ti invieremo la valutazione e ti ricontatteremo al più presto.');
+        showMsg('ok','Grazie ' + nome + '! Ecco la tua stima puntuale qui sopra. Ti inviamo il report della zona e ti ricontattiamo al più presto.');
         btn.textContent = '✓ Richiesta inviata';
+        sbloccato = true; mostraPrecisa();
+        $('resultPrecisa').scrollIntoView({behavior:'smooth', block:'center'});
       } else {
         throw new Error('web3forms');
       }
     }).catch(function(){
       mailtoFallback(payload);
       showMsg('ok','Completiamo l\'invio dalla tua app di posta.');
-      btn.disabled = false; btn.textContent = 'Ricevi la valutazione e fatti richiamare';
+      sbloccato = true; mostraPrecisa();
+      btn.disabled = false; btn.textContent = 'Mostrami la stima puntuale';
     });
   });
 })();
