@@ -22,7 +22,7 @@
 <meta name="theme-color" content="#0f3d2e" />
 <title>Valutazione immobile a Milano, Monza e Pavia: quanto vale la tua casa | AG 2 Sarpi</title>
 <meta name="description" content="Valutazione immobile gratuita a Milano, Monza e Brianza, Pavia e provincia: scopri subito, senza impegno, quanto vale la tua casa per vendita o affitto. Stima immediata per zona a cura di AG 2 Sarpi." />
-<meta name="keywords" content="valutazione immobile Milano, valutazione immobile Monza, valutazione immobile Pavia, quanto vale la mia casa, valutazione casa Milano, valutazione casa Monza e Brianza, valutazione casa Pavia, stima immobile Milano, valutazione affitto, agenzia immobiliare Milano" />
+<meta name="keywords" content="valutazione immobile Milano, valutazione immobile Monza, valutazione immobile Pavia, quanto vale la mia casa, valutazione casa Milano, valutazione villa Milano, valutazione ufficio Milano, valutazione capannone, valutazione negozio, valutazione casa Monza e Brianza, valutazione casa Pavia, stima immobile Milano, valutazione affitto, agenzia immobiliare Milano" />
 <meta name="robots" content="index,follow,max-image-preview:large" />
 <meta name="author" content="AG 2 Sarpi" />
 <meta name="geo.region" content="IT-25" />
@@ -116,6 +116,10 @@
   .result .rrange{font-family:'Fraunces',serif;font-size:clamp(26px,6vw,36px);font-weight:700;color:var(--green);margin:6px 0 2px}
   .result .rnote{font-size:13.5px;color:var(--muted)}
   .result .rpermq{font-size:14px;color:var(--ink);margin-top:6px}
+  /* Tipologie che richiedono un sopralluogo: niente cifra, tono diverso */
+  .result.dedicata{background:linear-gradient(160deg,#fdf6e8,#f7edd9);border-color:#e8d4a8}
+  .result.dedicata .rlabel{color:#8a6520}
+  .result.dedicata .rpermq{font-weight:700;color:#6b4d12}
 
   .lead{margin-top:18px;padding-top:18px;border-top:1px dashed var(--hair);display:none}
   .lead.show{display:block}
@@ -316,10 +320,26 @@
         <div class="field">
           <label class="lab" for="tipologia">Tipologia</label>
           <select id="tipologia">
-            <option value="1">Appartamento</option>
-            <option value="1.05">Attico / ultimo piano</option>
-            <option value="1.12">Villa / indipendente</option>
-            <option value="0.9">Piano terra / seminterrato</option>
+            <optgroup label="Residenziale">
+              <option value="appartamento" selected>Appartamento</option>
+              <option value="attico">Attico / ultimo piano</option>
+              <option value="loft">Loft / mansarda</option>
+              <option value="piano_terra">Piano terra / seminterrato</option>
+              <option value="schiera">Villa a schiera</option>
+              <option value="bifamiliare">Villa bifamiliare</option>
+              <option value="singola">Villa singola</option>
+              <option value="indipendente">Casa indipendente / rustico</option>
+            </optgroup>
+            <optgroup label="Uffici">
+              <option value="ufficio">Ufficio / studio</option>
+            </optgroup>
+            <optgroup label="Commerciale e altro">
+              <option value="negozio">Negozio / locale commerciale</option>
+              <option value="capannone">Capannone</option>
+              <option value="magazzino">Magazzino / laboratorio</option>
+              <option value="box">Box / posto auto</option>
+              <option value="terreno">Terreno</option>
+            </optgroup>
           </select>
         </div>
 
@@ -343,6 +363,14 @@
       <div class="rrange" id="rRange">—</div>
       <div class="rpermq" id="rPerMq"></div>
       <div class="rnote">Stima indicativa basata sui prezzi medi della zona. Il valore reale dipende da piano, esposizione, spese condominiali, classe energetica e stato preciso: te lo definiamo noi con un sopralluogo gratuito.</div>
+    </div>
+
+    <!-- Tipologie che una stima automatica non può valutare in modo onesto -->
+    <div class="result dedicata" id="resultDedicata">
+      <div class="rlabel">Serve una valutazione dedicata</div>
+      <div class="rpermq" id="rdTipo"></div>
+      <div class="rnote" id="rdNote"></div>
+      <div class="rnote" style="margin-top:8px">Preferiamo non darti un numero a caso: lasciaci i contatti qui sotto e ti richiamiamo con una valutazione fatta sul posto, gratuita e senza impegno.</div>
     </div>
 
     <!-- LEAD -->
@@ -399,6 +427,7 @@
       <p>Il valore di un immobile a <strong>Milano</strong> cambia molto da zona a zona. Un appartamento in <strong>centro</strong> (Duomo, Brera, Quadrilatero) ha quotazioni al metro quadro molto diverse rispetto al <strong>semicentro</strong> (Navigli, Porta Romana, Isola, Città Studi, Sarpi) o alla <strong>periferia</strong> e all'<strong>hinterland</strong>. Ma la zona è solo l'inizio.</p>
       <p>Lo stesso vale fuori città. A <strong>Monza e in Brianza</strong> le quotazioni cambiano molto tra il centro storico e la Villa Reale, il semicentro e i comuni della cintura come Brugherio, Villasanta, Seregno, Desio o Vimercate. A <strong>Pavia e in provincia</strong> pesano il centro storico e la zona universitaria, il Ticino, i comuni del Pavese a ridosso di Milano e i centri più grandi come Vigevano e Voghera. Per questo, oltre alla zona, ti chiediamo <strong>città, via e numero civico</strong>: è il dato che rende la stima davvero mirata.</p>
       <p>Sul valore finale incidono anche la <strong>superficie</strong>, lo <strong>stato dell'immobile</strong> (da ristrutturare, abitabile, ristrutturato, nuovo), il <strong>piano</strong> e la presenza di <strong>ascensore</strong>, la <strong>classe energetica</strong>, l'esposizione, le spese condominiali e l'andamento del mercato locale. La nostra stima online combina i prezzi medi di zona con le caratteristiche che inserisci, per darti subito una <strong>fascia di valore indicativa</strong>, sia per la <strong>vendita</strong> sia per l'<strong>affitto</strong>.</p>
+      <p>Non valutiamo solo case. Con lo stesso modulo puoi chiedere la valutazione di un <strong>appartamento</strong>, di una <strong>villa a schiera</strong>, <strong>bifamiliare</strong> o <strong>singola</strong>, di una <strong>casa indipendente</strong> e di un <strong>ufficio</strong>. Per <strong>negozi</strong>, <strong>capannoni</strong>, <strong>magazzini</strong>, <strong>box</strong> e <strong>terreni</strong> non diamo una cifra automatica: sono immobili in cui il valore dipende da altezza, accessi, vetrina, impianti o edificabilità, e un prezzo al metro quadro da solo direbbe poco. In quei casi ti richiamiamo e la valutazione la facciamo sul posto.</p>
       <p>Per un valore preciso, però, nulla sostituisce l'occhio di chi conosce il quartiere: un consulente di <strong>AG 2 Sarpi</strong> può fare un <strong>sopralluogo gratuito</strong> e darti una valutazione puntuale, senza alcun impegno da parte tua.</p>
     </div>
 
@@ -487,6 +516,53 @@
     pv_prov:    {vendita:1150,  affitto:6.5}
   };
 
+  /* Gli uffici hanno un mercato proprio: non si ricavano dal residenziale
+     con una percentuale, perché il divario cambia molto da zona a zona
+     (in centro valgono quasi quanto le case, in periferia molto meno).
+     Stessa struttura e stesse chiavi di PREZZI. */
+  var UFFICI = {
+    mi_centro:  {vendita:7000,  affitto:26},
+    mi_centro2: {vendita:7500,  affitto:28},
+    mi_semi:    {vendita:3800,  affitto:17},
+    mi_peri:    {vendita:2200,  affitto:12},
+    mi_hinter:  {vendita:1500,  affitto:9},
+    mz_centro:  {vendita:1800,  affitto:10},
+    mz_semi:    {vendita:1450,  affitto:8.5},
+    mz_peri:    {vendita:1200,  affitto:7},
+    mb_vicino:  {vendita:1300,  affitto:7.5},
+    mb_altro:   {vendita:1100,  affitto:7},
+    pv_centro:  {vendita:1500,  affitto:9},
+    pv_semi:    {vendita:1200,  affitto:7.5},
+    pv_peri:    {vendita:1000,  affitto:6.5},
+    pv_nord:    {vendita:1100,  affitto:7},
+    pv_prov:    {vendita:800,   affitto:5.5}
+  };
+
+  /* Per ogni tipologia: quale listino usare e con quale correzione.
+     - k        -> moltiplicatore sul listino residenziale
+     - tab      -> usa un listino diverso (uffici)
+     - dedicata -> niente stima automatica, si passa al sopralluogo:
+                   sono immobili in cui il valore dipende da fattori che
+                   un modulo non può cogliere (altezza e accessi di un
+                   capannone, vetrina e passaggio di un negozio,
+                   edificabilità di un terreno). */
+  var TIPOLOGIE = {
+    appartamento: {k:1},
+    attico:       {k:1.05},
+    loft:         {k:0.95},
+    piano_terra:  {k:0.90},
+    schiera:      {k:1.05},
+    bifamiliare:  {k:1.08},
+    singola:      {k:1.15},
+    indipendente: {k:1},
+    ufficio:      {tab:'ufficio', k:1},
+    negozio:      {dedicata:'Per i negozi il valore dipende soprattutto da vetrina, passaggio e licenza: una stima automatica al metro quadro sarebbe fuorviante.'},
+    capannone:    {dedicata:'Per i capannoni contano altezza utile, accessi e ribalte, impianti e destinazione d\'uso: un prezzo al metro quadro da solo non dice quasi nulla.'},
+    magazzino:    {dedicata:'Per magazzini e laboratori il valore dipende da accessibilità, altezza e destinazione d\'uso, che cambiano molto il risultato.'},
+    box:          {dedicata:'Box e posti auto non si valutano al metro quadro ma a corpo, e il prezzo cambia molto da via a via.'},
+    terreno:      {dedicata:'Per i terreni tutto dipende dall\'edificabilità e dagli indici del piano urbanistico del comune: va verificato caso per caso.'}
+  };
+
   var $ = function(id){ return document.getElementById(id); };
   var fmtEur = function(n){ return new Intl.NumberFormat('it-IT').format(Math.round(n)); };
 
@@ -503,21 +579,45 @@
 
     var scopo = document.querySelector('input[name="scopo"]:checked').value;
     var stato = parseFloat($('stato').value);
-    var tipo  = parseFloat($('tipologia').value);
     var asc   = parseFloat($('ascensore').value);
-    var base  = PREZZI[zona] ? PREZZI[zona][scopo] : PREZZI.mi_peri[scopo];
+    var tipoSel = $('tipologia');
+    var tipoTxt = tipoSel.options[tipoSel.selectedIndex].text;
+    var tipo = TIPOLOGIE[tipoSel.value] || TIPOLOGIE.appartamento;
+    var zonaTxt = zonaSel.options[zonaSel.selectedIndex].text;
 
-    var permq = base * stato * tipo * asc;
+    /* Capannoni, negozi, box e terreni: nessuna cifra automatica,
+       si passa direttamente alla richiesta di sopralluogo. */
+    if(tipo.dedicata){
+      lastValuation = {
+        scopo: scopo, zona: zonaTxt, mq: mq, dedicata: true,
+        stato: $('stato').options[$('stato').selectedIndex].text,
+        tipologia: tipoTxt,
+        ascensore: $('ascensore').options[$('ascensore').selectedIndex].text,
+        indirizzo: $('indirizzo').value.trim()
+      };
+      $('rdTipo').textContent = tipoTxt + ' · ' + mq + ' m² · ' + zonaTxt;
+      $('rdNote').textContent = tipo.dedicata;
+      $('result').classList.remove('show');
+      $('resultDedicata').classList.add('show');
+      $('leadBox').classList.add('show');
+      $('resultDedicata').scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+
+    var tabella = (tipo.tab === 'ufficio') ? UFFICI : PREZZI;
+    var base = (tabella[zona] || tabella.mi_peri)[scopo];
+
+    var permq = base * stato * tipo.k * asc;
     var totale = permq * mq;
     // fascia +/- 8%
     var low = totale * 0.92, high = totale * 1.08;
 
-    var zonaTxt = zonaSel.options[zonaSel.selectedIndex].text;
     lastValuation = {
       scopo: scopo, zona: zonaTxt, mq: mq,
       stato: $('stato').options[$('stato').selectedIndex].text,
-      tipologia: $('tipologia').options[$('tipologia').selectedIndex].text,
+      tipologia: tipoTxt,
       ascensore: $('ascensore').options[$('ascensore').selectedIndex].text,
+      indirizzo: $('indirizzo').value.trim(),
       permq: Math.round(permq), low: Math.round(low), high: Math.round(high)
     };
 
@@ -530,6 +630,7 @@
       $('rRange').textContent = '€ ' + fmtEur(low) + ' – € ' + fmtEur(high);
       $('rPerMq').textContent = 'Circa € ' + fmtEur(permq) + '/m² · ' + mq + ' m²';
     }
+    $('resultDedicata').classList.remove('show');
     $('result').classList.add('show');
     $('leadBox').classList.add('show');
     $('result').scrollIntoView({behavior:'smooth', block:'center'});
@@ -541,6 +642,10 @@
   Array.prototype.forEach.call(document.querySelectorAll('input[name="scopo"]'), function(r){
     r.addEventListener('change', function(){ if(lastValuation) calcola(); });
   });
+
+  /* Anche la tipologia: passando per esempio a «capannone» il risultato
+     cambia natura, e lasciare a video la cifra precedente confonderebbe. */
+  $('tipologia').addEventListener('change', function(){ if(lastValuation) calcola(); });
 
   // Privacy modal
   function openModal(e){ if(e) e.preventDefault(); $('privacyModal').classList.add('show'); }
@@ -556,6 +661,13 @@
     m.textContent = text;
   }
 
+  /* Le tipologie da sopralluogo non hanno una cifra: la mail deve dirlo
+     esplicitamente, non lasciare un importo vuoto o un NaN. */
+  function stimaTesto(p){
+    if(p.dedicata) return 'DA VALUTARE — tipologia che richiede sopralluogo';
+    return '€ ' + fmtEur(p.low) + ' - € ' + fmtEur(p.high) + (p.scopo === 'affitto' ? ' /mese' : '');
+  }
+
   function mailtoFallback(payload){
     var body = encodeURIComponent(
       'NUOVO LEAD VALUTAZIONE — AG 2 Sarpi\n\n' +
@@ -568,8 +680,7 @@
       'Superficie: ' + payload.mq + ' m²\n' +
       'Stato: ' + payload.stato + '\n' +
       'Tipologia: ' + payload.tipologia + '\n' +
-      'Stima: € ' + fmtEur(payload.low) + ' - € ' + fmtEur(payload.high) +
-        (payload.scopo === 'affitto' ? ' /mese' : '') + '\n'
+      'Stima: ' + stimaTesto(payload) + '\n'
     );
     window.location.href = 'mailto:' + DEST_EMAIL +
       '?subject=' + encodeURIComponent('Nuovo lead valutazione — ' + payload.nome + ' ' + payload.cognome) +
@@ -578,7 +689,7 @@
 
   $('leadForm').addEventListener('submit', function(e){
     e.preventDefault();
-    if(!lastValuation){ showMsg('err','Prima calcola il valore della casa.'); return; }
+    if(!lastValuation){ showMsg('err','Prima premi «Calcola il valore».'); return; }
     var nome = $('nome').value.trim(), cognome = $('cognome').value.trim();
     var tel = $('tel').value.trim(), email = $('email').value.trim();
     if(!nome || !cognome || !tel || !email){ showMsg('err','Compila nome, cognome, telefono ed email.'); return; }
@@ -589,6 +700,7 @@
       indirizzo: $('indirizzo').value.trim(),
       scopo:lastValuation.scopo, zona:lastValuation.zona, mq:lastValuation.mq,
       stato:lastValuation.stato, tipologia:lastValuation.tipologia,
+      dedicata:lastValuation.dedicata,
       low:lastValuation.low, high:lastValuation.high, permq:lastValuation.permq
     };
 
@@ -605,7 +717,8 @@
 
     var data = {
       access_key: WEB3FORMS_ACCESS_KEY,
-      subject: 'Nuovo lead valutazione — ' + nome + ' ' + cognome + ' (' + payload.scopo + ')',
+      subject: 'Nuovo lead valutazione — ' + nome + ' ' + cognome + ' (' + payload.scopo +
+               (payload.dedicata ? ', SOPRALLUOGO: ' + payload.tipologia : '') + ')',
       from_name: 'Valutazione AG 2 Sarpi',
       to: DEST_EMAIL,
       Nome: nome + ' ' + cognome,
@@ -617,8 +730,7 @@
       Superficie_mq: payload.mq,
       Stato: payload.stato,
       Tipologia: payload.tipologia,
-      Stima_min: '€ ' + fmtEur(payload.low) + (payload.scopo==='affitto'?'/mese':''),
-      Stima_max: '€ ' + fmtEur(payload.high) + (payload.scopo==='affitto'?'/mese':''),
+      Stima: stimaTesto(payload),
       Consenso_privacy: 'SI (' + new Date().toISOString() + ')'
     };
 
