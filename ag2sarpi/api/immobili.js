@@ -203,12 +203,37 @@ module.exports = async function handler(req, res) {
   const fresco = query.fresh === '1' || query.fresh === 'true';
   const debug = query.debug === '1';
 
+  /* Per provare una scheda diversa senza toccare la configurazione:
+     /api/immobili?debug=1&prova=<indirizzo della scheda>
+     Accetta solo indirizzi di immobiliare.it: questa funzione non deve poter
+     diventare un modo per farsi scaricare pagine qualsiasi da altri. */
+  let daProvare = '';
+  if (query.prova) {
+    try {
+      const u = new URL(String(query.prova));
+      const host = u.hostname.toLowerCase();
+      if (u.protocol === 'https:' && (host === 'immobiliare.it' || host.endsWith('.immobiliare.it'))) {
+        daProvare = u.toString();
+      }
+    } catch (e) { /* indirizzo non valido: si ignora */ }
+    if (!daProvare) {
+      res.setHeader('Cache-Control', 'no-store');
+      return res.status(200).end(JSON.stringify({
+        ok: false, motivo: 'prova-non-valida',
+        messaggio: 'Il parametro «prova» accetta solo indirizzi https di immobiliare.it.',
+        immobili: []
+      }));
+    }
+  }
+
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
   res.setHeader('Cache-Control', fresco
     ? 'no-store'
     : 'public, s-maxage=180, stale-while-revalidate=600');
 
-  if (!SCHEDA_AGENZIA) {
+  const scheda = daProvare || SCHEDA_AGENZIA;
+  if (!scheda) {
+    res.setHeader('Cache-Control', 'no-store');
     return res.status(200).end(JSON.stringify({
       ok: false,
       motivo: 'configurazione',
@@ -217,6 +242,7 @@ module.exports = async function handler(req, res) {
       immobili: []
     }));
   }
+  if (daProvare) res.setHeader('Cache-Control', 'no-store');   // una prova non si mette in cache
 
   const diagnostica = [];
   const tutti = [];
@@ -225,8 +251,8 @@ module.exports = async function handler(req, res) {
   try {
     for (let pagina = 1; pagina <= PAGINE_MAX; pagina++) {
       const url = pagina === 1
-        ? SCHEDA_AGENZIA
-        : SCHEDA_AGENZIA + (SCHEDA_AGENZIA.includes('?') ? '&' : '?') + 'pag=' + pagina;
+        ? scheda
+        : scheda + (scheda.includes('?') ? '&' : '?') + 'pag=' + pagina;
 
       const r = await scarica(url);
       if (r.stato !== 200) { diagnostica.push({ pagina, stato: r.stato, letti: 0 }); break; }
@@ -256,7 +282,7 @@ module.exports = async function handler(req, res) {
   const corpo = {
     ok,
     aggiornato: new Date().toISOString(),
-    fonte: SCHEDA_AGENZIA,
+    fonte: scheda,
     conteggio: tutti.length,
     immobili: tutti,
     motivo: ok ? null : 'lettura-non-riuscita',
